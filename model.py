@@ -4,9 +4,12 @@ import sqlite3
 from textblob import TextBlob
 from sqllocal import SQLquery
 
+
+# Returns the sentiment of text (positive, negative, neutral) in a range from -1 to 1
 def get_sentiment(text):
     analysis = TextBlob(text)
     return analysis.sentiment.polarity
+
 
 def modelRun():
     df = pd.read_json("AMAZON_FASHION.json", lines=True)
@@ -32,6 +35,7 @@ def modelRun():
     qu = "SELECT * FROM posi_bl1 WHERE reviewerID = (SELECT reviewerID FROM posi_bl1 GROUP BY reviewerID ORDER BY COUNT(reviewerID) DESC LIMIT 1)"
     df = SQLquery(qu)
     print(df)
+
 
 if __name__ == "__main__":
     modelRun()
