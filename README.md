@@ -1,5 +1,7 @@
 # Product Review Analysis
 
+### This is repo that was made for the test I attended from swym.
+
 | File Name       | Use                                                                                                                         |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `db.ipynb`      | This is a notebook where store the given JSON files into a SQL database.                                                    |
